@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Creator
+{% endblock %}
+
+<!-- Allows user to create a new group -->
+
+{% block main %}
+    <h3>Create new group</h3>
+    <form action="/creator" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Group Name" type="text" required>
+        </div>
+        <p>What genre of music do you want your group to play?</p>
+        <div class="mb-3">
+            <select id="genre" name="genre">
+                <option value = "Please select a genre">Please select a genre</option>
+                <option value = "rock">Rock</option>
+                <option value = "pop">Pop</option>
+                <option value = "jazz">Jazz</option>
+                <option value = "rhythm and Blues">Rhythm and Blues</option>
+                <option value = "country">Country</option>
+                <option value = "classical">Classical</option>
+                <option value = "folk">Folk</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control mx-auto w-auto" id="looking_for" name="looking_for" placeholder="Musicians/parts you are looking for..." type="text" rows="2" cols="40" maxlength="100" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Create group</button>
+    </form>
+{% endblock %}

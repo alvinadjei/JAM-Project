@@ -1,0 +1,13 @@
+Everything needed to run JAM can be found inside the JAM folder. It includes the jam.db SQL database, the app.py and helpers.py python files, and a templates folder containing the html templates that make up the website.
+
+jam.db contains two tables called "users" and "groups". "users" contains all of the information about each of the users, including their name, email, hash, primary instrument, and genre of music, as well as any other instruments that they play and any groups that they are a part of. "groups" contains the information about groups, including group name, genre, the names of its members, and what each group is looking for.
+
+helper.py contains a couple of helper functions to save some time when coding app.py. These functions are "login_required", which restricts a user from reaching certain pages without being signed in, and "apology" which renders an error page when needed.
+
+app.py contains the python code that connects all of the html templates and moderates the information from the html forms. Several of these templates are familiar from finance, including login, logout, and register, which are allow the user to create an account that they can log into and out of. The "search" function in app.py allows the user to go to the search page on the website and find musicians to connect with based on instrument and genre, with results appear in the "searched" template. The "groups" function takes you to a page with several links which allow you to manage your group activity and see your current group. A group can be formed with up to six musicians total. From here, the remove, manager, and creator functions, along with their corresponding templates, allow you to make new groups, and to add and remove people from them. The browse function allows the user to see all currently active groups, and to see the contact info (email address) of one of the people in the group.
+
+The index function takes the user to the homepage, where they can see their own profiile. The settings page allows the user to edit their profile, including their name, instruments of choice, genre, and status. The status refers to whether the profile is active (appears in searches) or inactive (does not appear in searches).
+
+Inside the static folder, there is a styles.css file. This file controls the aesthetics of the page, including the styling for the logo at the top and all of the tables we see on the website. This styling is present on every page thanks to the layout.html template, which is applied to the rest of the website.
+
+Using these features, the user can connect with individual musicians, as well as pre-formed groups looking for an extra person.

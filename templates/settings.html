@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+<!-- Settings page, where you can change your name, password, instrument, genre, and status (active or not) -->
+
+{% block main %}
+    <h3>Update Profile</h3>
+    <form action="/settings" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Full name" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="New password" type="password" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="New password (again)" type="password" required>
+        </div>
+        <p>What is your go-to instrument?</p>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="primary_instrument" name="primary_instrument" placeholder="Primary Instrument" type="text" required>
+            </div>
+            <p>What genre of music do you want to play on this instrument?</p>
+            <div class="mb-3">
+                <select id="genre" name="genre">
+                    <option value = "Please select a genre">Please select a genre</option>
+                    <option value = "rock">Rock</option>
+                    <option value = "pop">Pop</option>
+                    <option value = "jazz">Jazz</option>
+                    <option value = "rhythm and Blues">Rhythm and Blues</option>
+                    <option value = "country">Country</option>
+                    <option value = "classical">Classical</option>
+                    <option value = "folk">Folk</option>
+                </select>
+            </div>
+            <p>What other instruments do you play?</p>
+            <div class="mb-3">
+                <textarea class="form-control mx-auto w-auto" id="instruments" name="instruments" placeholder="Other instruments (optional)" type="text" rows="2" cols="40" maxlength="100"></textarea>
+            </div>
+            <p>Activate/deactivate account? (Deactivated accounts will not appear in searches and can be reactivated at any time)</p>
+            <div class="mb-3">
+                <select id="status" name="status" required>
+                    <option value = "Please select an option">Please select an option</option>
+                    <option value = "activate">Activate</option>
+                    <option value = "deactivate">Deactivate</option>
+                </select>
+            </div>
+        <button class="btn btn-primary" type="submit">Update profile</button>
+    </form>
+{% endblock %}

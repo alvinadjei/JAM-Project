@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manager
+{% endblock %}
+
+<!-- Add new members to your group -->
+
+{% block main %}
+    <h4>On this page, you can search for people by name to add to your group.</h4>
+    <form action="/manager" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Full Name" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+<!-- Register for a new account -->
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Full name" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Password (again)" type="password">
+        </div>
+        <p>What is your go-to instrument?</p>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="primary_instrument" name="primary_instrument" placeholder="Primary Instrument" type="text">
+        </div>
+        <p>What genre of music do you want to play on this instrument?</p>
+        <div class="mb-3">
+            <select id="genre" name="genre">
+                <option value = "Please select a genre">Please select a genre</option>
+                <option value = "rock">Rock</option>
+                <option value = "pop">Pop</option>
+                <option value = "jazz">Jazz</option>
+                <option value = "rhythm and Blues">Rhythm and Blues</option>
+                <option value = "country">Country</option>
+                <option value = "classical">Classical</option>
+                <option value = "folk">Folk</option>
+            </select>
+        </div>
+        <p>What other instruments do you play?</p>
+        <div class="mb-3">
+            <textarea class="form-control mx-auto w-auto" id="instruments" name="instruments" placeholder="Other instruments (optional)" type="text" rows="2" cols="40" maxlength="100"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

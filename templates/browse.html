@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Browse
+{% endblock %}
+
+<!-- Browse all active groups -->
+
+{% block main %}
+    <table class = "center">
+        <h4>Active Groups</h4>
+        <thead>
+            <tr>
+                <th>Group Name</th>
+                <th>Genre</th>
+                <th>Members</th>
+                <th>Looking for</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group in groups %}
+                <tr>
+                    <td>{{ group.name }}</td>
+                    <td>{{ group.genre }}</td>
+                    <td>
+                        {% if group.member_1 != none %}
+                            {{ group.member_1 }}
+                        {% endif %}
+                        {% if group.member_2 != none %}
+                            , {{ group.member_2 }}
+                        {% endif %}
+                        {% if group.member_3 != none %}
+                            , {{ group.member_3 }}
+                        {% endif %}
+                        {% if group.member_4 != none %}
+                            , {{ group.member_4 }}
+                        {% endif %}
+                        {% if group.member_5 != none %}
+                            , {{ group.member_5 }}
+                        {% endif %}
+                        {% if group.member_6 != none %}
+                            , {{ group.member_6 }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ group.looking_for }}
+                    </td>
+                    <td>
+                        {{ group.email }}
+                    </td>
+                    <br>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

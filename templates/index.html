@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+<!-- Main page which shows the user's profile -->
+
+{% block main %}
+    <h3>Profile</h3>
+    <table class = "center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Primary Instrument</th>
+                <th>Genre</th>
+                <th>Other instruments</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ primary_instrument }}</td>
+                <td>{{ genre }}</td>
+                <td>{{ instruments }}</td>
+                <td>{{ status }}</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+{% endblock %}

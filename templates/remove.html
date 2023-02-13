@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Remove
+{% endblock %}
+
+<!-- Remove members from your group -->
+
+{% block main %}
+    <form action="/remove" method="post">
+        <p>Who would you like to remove from the group?</p>
+        <div class="mb-3">
+            <select id="name" name="name">
+                <option value = "Please select a member to remove">Please select a member to remove</option>
+                {% if names[0] != none %}
+                    <option value = member_1>{{ names[0] }}</option>
+                {% endif %}
+                {% if names[1] != none %}
+                    <option value = member_2>{{ names[1] }}</option>
+                {% endif %}
+                {% if names[2] != none %}
+                    <option value = "member_3">{{ names[2] }}</option>
+                {% endif %}
+                {% if names[3] != none %}
+                    <option value = "member_4">{{ names[3] }}</option>
+                {% endif %}
+                {% if names[4] != none %}
+                    <option value = "member_5">{{ names[4] }}</option>
+                {% endif %}
+                {% if names[5] != none %}
+                    <option value = "member_6">{{ names[5] }}</option>
+                {% endif %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Remove</button>
+    </form>
+{% endblock %}

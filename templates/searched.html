@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Searched
+{% endblock %}
+
+<!-- Search results page, organized by instrument and genre -->
+
+{% block main %}
+    <table class = "center">
+        <h4>{{ genre }} {{ instrument }} players</h4>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Primary Instrument</th>
+                <th>Genre</th>
+                <th>Other Instruments</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in results1 %}
+                <tr>
+                    <td>{{ profile.name }}</td>
+                    <td>{{ profile.primary_instrument }}</td>
+                    <td>{{ profile.genre }}</td>
+                    <td>{{ profile.instruments }}</td>
+                    <td>{{ profile.email }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <h4>{{ instrument }} players</h4>
+    <table class = "center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Primary Instrument</th>
+                <th>Genre</th>
+                <th>Other Instruments</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in results2 %}
+                <tr>
+                    <td>{{ profile.name }}</td>
+                    <td>{{ profile.primary_instrument }}</td>
+                    <td>{{ profile.genre }}</td>
+                    <td>{{ profile.instruments }}</td>
+                    <td>{{ profile.email }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <h4>{{ genre }} musicians</h4>
+    <table class = "center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Primary Instrument</th>
+                <th>Genre</th>
+                <th>Other Instruments</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in results3 %}
+                <tr>
+                    <td>{{ profile.name }}</td>
+                    <td>{{ profile.primary_instrument }}</td>
+                    <td>{{ profile.genre }}</td>
+                    <td>{{ profile.instruments }}</td>
+                    <td>{{ profile.email }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <h4>Can play {{ instrument }}</h4>
+    <table class = "center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Primary Instrument</th>
+                <th>Genre</th>
+                <th>Other Instruments</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in results4 %}
+                <tr>
+                    <td>{{ profile.name }}</td>
+                    <td>{{ profile.primary_instrument }}</td>
+                    <td>{{ profile.genre }}</td>
+                    <td>{{ profile.instruments }}</td>
+                    <td>{{ profile.email }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

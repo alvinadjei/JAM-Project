@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+<!-- Search for musicians by instrument and genre -->
+
+{% block main %}
+    <h4>On this page, you can search for people to JAM with by instrument and by genre.</h4>
+    <form action="/search" method="post">
+        <p>Instrument?</p>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="instrument" name="instrument" placeholder="Instrument" type="text" required>
+        </div>
+        <p>Genre?</p>
+        <div class="mb-3">
+            <select id="genre" name="genre" required>
+                <option value = "Please select a genre">Please select a genre</option>
+                <option value = "rock">Rock</option>
+                <option value = "pop">Pop</option>
+                <option value = "jazz">Jazz</option>
+                <option value = "rhythm and Blues">Rhythm and Blues</option>
+                <option value = "country">Country</option>
+                <option value = "classical">Classical</option>
+                <option value = "folk">Folk</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}

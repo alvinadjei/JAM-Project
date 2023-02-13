@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Groups
+{% endblock %}
+
+<!-- Shows which group the user is in -->
+
+{% block main %}
+    <table class = "center">
+        <h4>Your Group</h4>
+        <thead>
+            <tr>
+                <th>Group Name</th>
+                <th>Genre</th>
+                <th>Members</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- Loop that lists all members of your group, but not the blank slots in your group -->
+                {% for group in groups %}
+                    <td>{{ group.name }}</td>
+                    <td>{{ group.genre }}</td>
+                    <td>
+                        {% if group.member_1 != none %}
+                            {{ group.member_1 }}
+                        {% endif %}
+                        {% if group.member_2 != none %}
+                            , {{ group.member_2 }}
+                        {% endif %}
+                        {% if group.member_3 != none %}
+                            , {{ group.member_3 }}
+                        {% endif %}
+                        {% if group.member_4 != none %}
+                            , {{ group.member_4 }}
+                        {% endif %}
+                        {% if group.member_5 != none %}
+                            , {{ group.member_5 }}
+                        {% endif %}
+                        {% if group.member_6 != none %}
+                            , {{ group.member_6 }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <a href="creator">Create Group</a>
+    <a href="manager">Add Members</a>
+    <a href="remove">Remove Members</a>
+{% endblock %}
